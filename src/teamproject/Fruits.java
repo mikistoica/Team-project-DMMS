@@ -113,8 +113,13 @@ public class Fruits extends javax.swing.JFrame {
         yourcartbtn.setForeground(new java.awt.Color(0, 51, 0));
         yourcartbtn.setText("Your cart");
         yourcartbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 0)));
+        yourcartbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourcartbtnActionPerformed(evt);
+            }
+        });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fruits", 0, 0, new java.awt.Font("AR JULIAN", 0, 18), new java.awt.Color(0, 51, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fruits", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AR JULIAN", 0, 18), new java.awt.Color(0, 51, 0))); // NOI18N
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Banana.jpg"))); // NOI18N
 
@@ -521,6 +526,10 @@ public class Fruits extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_bevbtnActionPerformed
+
+    private void yourcartbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourcartbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_yourcartbtnActionPerformed
 
     /**
      * @param args the command line arguments
