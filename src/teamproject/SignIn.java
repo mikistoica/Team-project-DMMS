@@ -259,7 +259,7 @@ public class SignIn extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new ForgottenPassword().setVisible(true);
-                new SignIn().setVisible(false);
+                //new SignIn().setVisible(false);
             }
         });
     }//GEN-LAST:event_forgottenpasbtnActionPerformed

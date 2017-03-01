@@ -86,6 +86,16 @@ public class Fruits extends javax.swing.JFrame {
         addraspberries = new javax.swing.JButton();
         addstrawberries = new javax.swing.JButton();
         addwatermelon = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -263,6 +273,36 @@ public class Fruits extends javax.swing.JFrame {
         addwatermelon.setForeground(new java.awt.Color(0, 51, 0));
         addwatermelon.setText("Add to cart");
 
+        jLabel32.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel32.setText("Earn 1 loyalty point!");
+
+        jLabel33.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel33.setText("Earn 2 loyalty points!");
+
+        jLabel34.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel34.setText("Earn 2 loyalty points!");
+
+        jLabel35.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel35.setText("Earn 1 loyalty point!");
+
+        jLabel36.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel36.setText("Earn 1 loyalty point!");
+
+        jLabel37.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel37.setText("Earn 1 loyalty point!");
+
+        jLabel38.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel38.setText("Earn 1 loyalty point!");
+
+        jLabel39.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel39.setText("Earn 2 loyalty points!");
+
+        jLabel40.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel40.setText("Earn 3 loyalty points!");
+
+        jLabel41.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel41.setText("Earn 2 loyalty points!");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -277,7 +317,8 @@ public class Fruits extends javax.swing.JFrame {
                             .addComponent(jLabel30)
                             .addComponent(jLabel31)
                             .addComponent(watermelonbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addwatermelon)))
+                            .addComponent(addwatermelon)
+                            .addComponent(jLabel41)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -285,7 +326,8 @@ public class Fruits extends javax.swing.JFrame {
                             .addComponent(jLabel28)
                             .addComponent(jLabel29)
                             .addComponent(strawberrybox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addstrawberries)))
+                            .addComponent(addstrawberries)
+                            .addComponent(jLabel40)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -293,7 +335,8 @@ public class Fruits extends javax.swing.JFrame {
                             .addComponent(jLabel26)
                             .addComponent(jLabel27)
                             .addComponent(raspberrybox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addraspberries)))
+                            .addComponent(addraspberries)
+                            .addComponent(jLabel39)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -301,7 +344,8 @@ public class Fruits extends javax.swing.JFrame {
                             .addComponent(jLabel24)
                             .addComponent(jLabel25)
                             .addComponent(pineapplebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addpineapple)))
+                            .addComponent(addpineapple)
+                            .addComponent(jLabel38)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -309,7 +353,8 @@ public class Fruits extends javax.swing.JFrame {
                             .addComponent(jLabel17)
                             .addComponent(jLabel18)
                             .addComponent(mangobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addmango)))
+                            .addComponent(addmango)
+                            .addComponent(jLabel35)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -317,7 +362,8 @@ public class Fruits extends javax.swing.JFrame {
                             .addComponent(jLabel15)
                             .addComponent(jLabel16)
                             .addComponent(grapebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addgrapes)))
+                            .addComponent(addgrapes)
+                            .addComponent(jLabel34)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -325,7 +371,8 @@ public class Fruits extends javax.swing.JFrame {
                             .addComponent(jLabel13)
                             .addComponent(jLabel14)
                             .addComponent(cherrybox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addcherries)))
+                            .addComponent(addcherries)
+                            .addComponent(jLabel33)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -333,7 +380,8 @@ public class Fruits extends javax.swing.JFrame {
                             .addComponent(jLabel11)
                             .addComponent(jLabel12)
                             .addComponent(bananabox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addbanana)))
+                            .addComponent(addbanana)
+                            .addComponent(jLabel32)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -348,7 +396,9 @@ public class Fruits extends javax.swing.JFrame {
                             .addComponent(jLabel23)
                             .addComponent(pearbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addoranges)
-                            .addComponent(addpears))))
+                            .addComponent(addpears)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel37))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -364,7 +414,9 @@ public class Fruits extends javax.swing.JFrame {
                         .addGap(7, 7, 7)
                         .addComponent(bananabox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(addbanana)))
+                        .addComponent(addbanana)
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel32)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
@@ -375,7 +427,9 @@ public class Fruits extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cherrybox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(addcherries)))
+                        .addComponent(addcherries)
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel33)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
@@ -386,7 +440,9 @@ public class Fruits extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(grapebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(addgrapes)))
+                        .addComponent(addgrapes)
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel34)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -397,7 +453,9 @@ public class Fruits extends javax.swing.JFrame {
                         .addGap(4, 4, 4)
                         .addComponent(mangobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(addmango)))
+                        .addComponent(addmango)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel35)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
@@ -408,7 +466,9 @@ public class Fruits extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(orangebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(addoranges)))
+                        .addComponent(addoranges)
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel36)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
@@ -421,7 +481,9 @@ public class Fruits extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel22)
                         .addGap(18, 18, 18)
-                        .addComponent(addpears)))
+                        .addComponent(addpears)
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel37)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
@@ -432,7 +494,9 @@ public class Fruits extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pineapplebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(addpineapple)))
+                        .addComponent(addpineapple)
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel38)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
@@ -443,7 +507,9 @@ public class Fruits extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(raspberrybox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(addraspberries)))
+                        .addComponent(addraspberries)
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel39)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
@@ -454,7 +520,9 @@ public class Fruits extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addComponent(strawberrybox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(addstrawberries)))
+                        .addComponent(addstrawberries)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel40)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
@@ -465,7 +533,9 @@ public class Fruits extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(watermelonbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(addwatermelon)))
+                        .addComponent(addwatermelon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel41)))
                 .addContainerGap())
         );
 
@@ -606,7 +676,17 @@ public class Fruits extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
