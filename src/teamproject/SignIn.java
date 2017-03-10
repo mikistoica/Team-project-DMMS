@@ -7,6 +7,8 @@ package teamproject;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Random;
@@ -215,7 +217,10 @@ public class SignIn extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             
-            String sql = "insert into CUSTOMERS (id, firstname, surname, username, phone, password) values (?, ?, ?, ?, ?, ?)";
+            /*Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\Mihaela\\Documents\\Database1.accdb");
+            Statement st = con.createStatement();
+            int a=st.executeUpdate("insert into CUSTOMERS (id, firstname, surname, username, phone, password) values (?, ?, ?, ?, ?, ?)");
+            
             String firstname, surname, username, password;
             int phone = 0;
             
@@ -223,6 +228,24 @@ public class SignIn extends javax.swing.JFrame {
             surname = txtsurname.getText();
             username = txtcausername.getText();
             password = txtcapassword.getText();
+            //phone = Integer.parseInt(txtphone.getText());
+            
+            if(a==1)
+            {
+                JOptionPane.showMessageDialog(null, "WELCOME! \n Your details have been saved!"
+                        + " \n \n You can now log into your account using your username and password!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Registration failed!");
+            }*/
+            
+            String sql = "insert into CUSTOMERS (id, firstname, surname, username, phone, password) values (?, ?, ?, ?, ?, ?)";
+            String firstname, surname, username, password;
+            int phone = 0;
+            
+            firstname = txtfirstname.getText();
+            surname = txtsurname.getText();
+            username = txtcausername.getText();
+            //password = txtcapassword.getText();
             
             try {
                 phone = Integer.parseInt(txtphone.getText());
@@ -243,7 +266,8 @@ public class SignIn extends javax.swing.JFrame {
                 Random rand = new Random();
                 int id = rand.nextInt(50) + 1;
                 statement.executeUpdate("INSERT INTO CUSTOMERS VALUES (" + id + ",'" + firstname +"','" +surname
-                        + "','" +username+ "','" +phone+"'," +password+ ")");
+                        + "','" +username+ "','" +phone+")");
+                //'," +password+ "
                 
                 JOptionPane.showMessageDialog(null, "WELCOME! \n Your details have been saved!"
                         + " \n \n You can now log into your account using your username and password!");

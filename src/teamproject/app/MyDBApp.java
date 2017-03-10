@@ -20,10 +20,10 @@ public class MyDBApp {
     public Connection dbConnection;
     public void makeDbConnection() {
         try {
-            String user = "saxon";
+            /*String user = "saxon";
             String password = "password";
-            String url = "jdbc:derby://localhost:1527/saxon";
-            dbConnection = DriverManager.getConnection(url, user, password);
+            String url = "jdbc:derby://localhost:1527/saxon";*/
+            dbConnection = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\Mihaela\\Documents\\Database1.accdb");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
