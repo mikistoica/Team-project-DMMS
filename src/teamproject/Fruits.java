@@ -7,6 +7,7 @@ package teamproject;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -599,6 +600,8 @@ public class Fruits extends javax.swing.JFrame {
 
     private void yourcartbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourcartbtnActionPerformed
         // TODO add your handling code here:
+        //code to get the items in the cart
+        JOptionPane.showMessageDialog(null, "Your products: " );
     }//GEN-LAST:event_yourcartbtnActionPerformed
 
     /**

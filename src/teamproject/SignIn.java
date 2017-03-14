@@ -54,6 +54,8 @@ public class SignIn extends javax.swing.JFrame {
         txtconfirmpassword = new javax.swing.JPasswordField();
         forgottenpasbtn = new javax.swing.JButton();
         signinbtn = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -91,17 +93,17 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
 
-        txtfirstname.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Firstname", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        txtfirstname.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Firstname", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        txtsurname.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Surname", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        txtsurname.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Surname", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        txtcausername.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Create a username", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        txtcausername.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Create a username", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        txtphone.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phone number", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        txtphone.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phone number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        txtcapassword.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Create a password", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        txtcapassword.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Create a password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        txtconfirmpassword.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Confirm password", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        txtconfirmpassword.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Confirm password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
         forgottenpasbtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         forgottenpasbtn.setForeground(new java.awt.Color(0, 51, 0));
@@ -123,6 +125,14 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setForeground(new java.awt.Color(0, 51, 0));
+        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Address", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 51, 0));
+        jButton1.setText("Change your address");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -142,9 +152,6 @@ public class SignIn extends javax.swing.JFrame {
                                 .addComponent(txtsiusername, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(forgottenpasbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtcapassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
@@ -159,11 +166,19 @@ public class SignIn extends javax.swing.JFrame {
                         .addGap(108, 108, 108)
                         .addComponent(lblsignin))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
+                        .addGap(36, 36, 36)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
                         .addComponent(signinbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(163, 163, 163)
+                        .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -183,7 +198,9 @@ public class SignIn extends javax.swing.JFrame {
                 .addComponent(forgottenpasbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -198,8 +215,9 @@ public class SignIn extends javax.swing.JFrame {
                     .addComponent(txtcapassword)
                     .addComponent(txtconfirmpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(signinbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(signinbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -326,8 +344,10 @@ public class SignIn extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton forgottenpasbtn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblsignin;
     private javax.swing.JButton loginbtn;
     private javax.swing.JButton signinbtn;
