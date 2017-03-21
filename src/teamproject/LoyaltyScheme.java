@@ -5,6 +5,10 @@
  */
 package teamproject;
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author 21281758
@@ -16,6 +20,7 @@ public class LoyaltyScheme extends javax.swing.JFrame {
      */
     public LoyaltyScheme() {
         initComponents();
+        this.getContentPane().setBackground(Color.CYAN);
     }
 
     /**
@@ -30,8 +35,10 @@ public class LoyaltyScheme extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
+        closebtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(342, 250));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 0));
@@ -39,10 +46,18 @@ public class LoyaltyScheme extends javax.swing.JFrame {
 
         jScrollPane1.setForeground(new java.awt.Color(0, 51, 0));
 
+        jTextPane1.setEditable(false);
         jTextPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jTextPane1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextPane1.setText("Loyalty Scheme is a point base reward giving to customers, to compensate them for patronising the company and this rewards can be used in the future to purchase goods from the company, in addition the customers get points based on how much they shop so the more they shop the more points they will get.");
         jScrollPane1.setViewportView(jTextPane1);
+
+        closebtn.setText("Close");
+        closebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closebtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,7 +70,10 @@ public class LoyaltyScheme extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(closebtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -65,11 +83,29 @@ public class LoyaltyScheme extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(closebtn)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void closebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closebtnActionPerformed
+        // TODO add your handling code here:
+        closebtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {  
+                dispose();
+                new HomePage().setVisible(true);
+                this.setDefaultCloseOperation(ReturnPolicy.DISPOSE_ON_CLOSE);
+            }         
+
+            private void setDefaultCloseOperation(int DISPOSE_ON_CLOSE) {
+                
+            }
+        });
+    }//GEN-LAST:event_closebtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,6 +143,7 @@ public class LoyaltyScheme extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton closebtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;

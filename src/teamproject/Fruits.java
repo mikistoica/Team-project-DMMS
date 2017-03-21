@@ -5,6 +5,7 @@
  */
 package teamproject;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -97,9 +98,11 @@ public class Fruits extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
+        hmepgebtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        vegbtn.setBackground(new java.awt.Color(132, 222, 187));
         vegbtn.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
         vegbtn.setForeground(new java.awt.Color(0, 51, 0));
         vegbtn.setText("Vegetables");
@@ -110,6 +113,7 @@ public class Fruits extends javax.swing.JFrame {
             }
         });
 
+        bevbtn.setBackground(new java.awt.Color(255, 102, 102));
         bevbtn.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
         bevbtn.setForeground(new java.awt.Color(0, 51, 0));
         bevbtn.setText("Beverages");
@@ -130,7 +134,7 @@ public class Fruits extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fruits", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AR JULIAN", 0, 18), new java.awt.Color(0, 51, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fruits", 0, 0, new java.awt.Font("AR JULIAN", 0, 18), new java.awt.Color(0, 51, 0))); // NOI18N
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Banana.jpg"))); // NOI18N
 
@@ -542,6 +546,13 @@ public class Fruits extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel1);
 
+        hmepgebtn.setText("Homepage");
+        hmepgebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hmepgebtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -556,7 +567,8 @@ public class Fruits extends javax.swing.JFrame {
                         .addComponent(bevbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(yourcartbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(hmepgebtn)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -564,7 +576,9 @@ public class Fruits extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(yourcartbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(yourcartbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(hmepgebtn))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(vegbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(bevbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -603,6 +617,20 @@ public class Fruits extends javax.swing.JFrame {
         //code to get the items in the cart
         JOptionPane.showMessageDialog(null, "Your products: " );
     }//GEN-LAST:event_yourcartbtnActionPerformed
+
+    private void hmepgebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hmepgebtnActionPerformed
+        // TODO add your handling code here:
+        hmepgebtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new HomePage().setVisible(true);
+            }
+
+            private void setDefaultCloseOperation(int DISPOSE_ON_CLOSE) {
+            }
+        });
+    }//GEN-LAST:event_hmepgebtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -654,6 +682,7 @@ public class Fruits extends javax.swing.JFrame {
     private javax.swing.JButton bevbtn;
     private javax.swing.JComboBox<String> cherrybox;
     private javax.swing.JComboBox<String> grapebox;
+    private javax.swing.JButton hmepgebtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

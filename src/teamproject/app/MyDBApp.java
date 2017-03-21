@@ -21,9 +21,9 @@ public class MyDBApp {
     public void makeDbConnection() {
         try {
             /*String user = "saxon";
-            String password = "password";
-            String url = "jdbc:derby://localhost:1527/saxon";*/
-            dbConnection = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\Mihaela\\Documents\\Database1.accdb");
+            String password = "password";*/
+            //String url = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=DatabaseforProject.mdb";
+            dbConnection = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\21258784\\Desktop\\DatabaseforProject.accdb");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

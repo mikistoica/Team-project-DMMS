@@ -95,10 +95,11 @@ public class Vegetables extends javax.swing.JFrame {
         fruitbtn = new javax.swing.JButton();
         yourcartbtn = new javax.swing.JButton();
         bevbtn = new javax.swing.JButton();
+        hmepgebtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vegetables", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AR JULIAN", 0, 18), new java.awt.Color(0, 51, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vegetables", 0, 0, new java.awt.Font("AR JULIAN", 0, 18), new java.awt.Color(0, 51, 0))); // NOI18N
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Broccoli.jpg"))); // NOI18N
 
@@ -517,6 +518,7 @@ public class Vegetables extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel1);
 
+        fruitbtn.setBackground(new java.awt.Color(255, 204, 102));
         fruitbtn.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
         fruitbtn.setForeground(new java.awt.Color(0, 51, 0));
         fruitbtn.setText("Fruits");
@@ -532,6 +534,7 @@ public class Vegetables extends javax.swing.JFrame {
         yourcartbtn.setText("Your cart");
         yourcartbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 0)));
 
+        bevbtn.setBackground(new java.awt.Color(255, 102, 102));
         bevbtn.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
         bevbtn.setForeground(new java.awt.Color(0, 51, 0));
         bevbtn.setText("Beverages");
@@ -539,6 +542,13 @@ public class Vegetables extends javax.swing.JFrame {
         bevbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bevbtnActionPerformed(evt);
+            }
+        });
+
+        hmepgebtn.setText("Homepage");
+        hmepgebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hmepgebtnActionPerformed(evt);
             }
         });
 
@@ -554,8 +564,10 @@ public class Vegetables extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bevbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(yourcartbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE))
+                        .addComponent(yourcartbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hmepgebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -564,7 +576,8 @@ public class Vegetables extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fruitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bevbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(yourcartbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(yourcartbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hmepgebtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
                 .addContainerGap())
@@ -606,6 +619,21 @@ public class Vegetables extends javax.swing.JFrame {
     private void addsweetcornActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addsweetcornActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addsweetcornActionPerformed
+
+    private void hmepgebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hmepgebtnActionPerformed
+        // TODO add your handling code here:
+        hmepgebtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new HomePage().setVisible(true);
+            }
+
+            private void setDefaultCloseOperation(int DISPOSE_ON_CLOSE) {
+            }
+        });
+        
+    }//GEN-LAST:event_hmepgebtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -659,6 +687,7 @@ public class Vegetables extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cucumberbox;
     private javax.swing.JButton fruitbtn;
     private javax.swing.JComboBox<String> greenbeanbox;
+    private javax.swing.JButton hmepgebtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

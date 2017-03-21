@@ -5,8 +5,10 @@
  */
 package teamproject;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 /**
  *
@@ -17,8 +19,10 @@ public class HomePage extends javax.swing.JFrame {
     /**
      * Creates new form HomePage
      */
+    
     public HomePage() {
         initComponents();
+        this.getContentPane().setBackground(Color.WHITE);
     }
 
     /**
@@ -42,14 +46,17 @@ public class HomePage extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         btnreturn = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        loyaltybtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         signin = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
+        vegbtn.setBackground(new java.awt.Color(162, 227, 162));
         vegbtn.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
         vegbtn.setForeground(new java.awt.Color(0, 51, 0));
         vegbtn.setText("Vegetables");
@@ -60,6 +67,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        fruitbtn.setBackground(new java.awt.Color(255, 153, 102));
         fruitbtn.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
         fruitbtn.setForeground(new java.awt.Color(0, 51, 0));
         fruitbtn.setText("Fruits");
@@ -70,6 +78,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        bevbtn.setBackground(new java.awt.Color(255, 102, 102));
         bevbtn.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
         bevbtn.setForeground(new java.awt.Color(0, 51, 0));
         bevbtn.setText("Beverages");
@@ -114,10 +123,16 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setForeground(new java.awt.Color(0, 51, 0));
-        jButton6.setText("What is Loyalty Scheme?");
-        jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 0)));
+        loyaltybtn.setForeground(new java.awt.Color(0, 51, 0));
+        loyaltybtn.setText("What is Loyalty Scheme?");
+        loyaltybtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 0)));
+        loyaltybtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loyaltybtnActionPerformed(evt);
+            }
+        });
 
+        signin.setBackground(new java.awt.Color(0, 204, 204));
         signin.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
         signin.setForeground(new java.awt.Color(0, 51, 0));
         signin.setText("Sign in/Register");
@@ -164,8 +179,8 @@ public class HomePage extends javax.swing.JFrame {
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnreturn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(loyaltybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnreturn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,8 +210,8 @@ public class HomePage extends javax.swing.JFrame {
                         .addComponent(fruitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(bevbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(signin)
-                .addGap(18, 18, 18)
+                .addComponent(signin, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,7 +221,7 @@ public class HomePage extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addGap(14, 14, 14)
                         .addComponent(jLabel8))
-                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(loyaltybtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -268,10 +283,22 @@ public class HomePage extends javax.swing.JFrame {
         btnreturn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ReturnPolicy().setVisible(true);
+                dispose();
+                new ReturnPolicy().setVisible(true);                
             }           
         });
     }//GEN-LAST:event_btnreturnActionPerformed
+
+    private void loyaltybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loyaltybtnActionPerformed
+        // TODO add your handling code here:
+        loyaltybtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new LoyaltyScheme().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_loyaltybtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -311,7 +338,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton bevbtn;
     private javax.swing.JButton btnreturn;
     private javax.swing.JButton fruitbtn;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -323,6 +349,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JButton loyaltybtn;
     private javax.swing.JButton signin;
     private javax.swing.JButton vegbtn;
     // End of variables declaration//GEN-END:variables
