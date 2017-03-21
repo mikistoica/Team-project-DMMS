@@ -614,8 +614,14 @@ public class Fruits extends javax.swing.JFrame {
 
     private void yourcartbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourcartbtnActionPerformed
         // TODO add your handling code here:
-        //code to get the items in the cart
-        JOptionPane.showMessageDialog(null, "Your products: " );
+        //code to get the items in the cart        
+        yourcartbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new ShoppingCart().setVisible(true);
+            }
+        });
     }//GEN-LAST:event_yourcartbtnActionPerformed
 
     private void hmepgebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hmepgebtnActionPerformed

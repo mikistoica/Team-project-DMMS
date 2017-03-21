@@ -99,7 +99,7 @@ public class Vegetables extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vegetables", 0, 0, new java.awt.Font("AR JULIAN", 0, 18), new java.awt.Color(0, 51, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vegetables", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AR JULIAN", 0, 18), new java.awt.Color(0, 51, 0))); // NOI18N
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Broccoli.jpg"))); // NOI18N
 
@@ -533,6 +533,11 @@ public class Vegetables extends javax.swing.JFrame {
         yourcartbtn.setForeground(new java.awt.Color(0, 51, 0));
         yourcartbtn.setText("Your cart");
         yourcartbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 0)));
+        yourcartbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourcartbtnActionPerformed(evt);
+            }
+        });
 
         bevbtn.setBackground(new java.awt.Color(255, 102, 102));
         bevbtn.setFont(new java.awt.Font("AR JULIAN", 0, 14)); // NOI18N
@@ -564,10 +569,10 @@ public class Vegetables extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bevbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(yourcartbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
+                        .addComponent(yourcartbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hmepgebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hmepgebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -578,9 +583,9 @@ public class Vegetables extends javax.swing.JFrame {
                     .addComponent(bevbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(yourcartbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hmepgebtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -634,6 +639,17 @@ public class Vegetables extends javax.swing.JFrame {
         });
         
     }//GEN-LAST:event_hmepgebtnActionPerformed
+
+    private void yourcartbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourcartbtnActionPerformed
+        // TODO add your handling code here:
+        yourcartbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new ShoppingCart().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_yourcartbtnActionPerformed
 
     /**
      * @param args the command line arguments

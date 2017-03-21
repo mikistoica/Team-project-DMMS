@@ -104,6 +104,7 @@ public class ForgottenPassword extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
+                new SignIn().setVisible(true);
                 this.setDefaultCloseOperation(ReturnPolicy.DISPOSE_ON_CLOSE);
             }         
 

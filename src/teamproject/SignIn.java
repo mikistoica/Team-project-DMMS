@@ -314,8 +314,9 @@ public class SignIn extends javax.swing.JFrame {
         forgottenpasbtn.addActionListener(new ActionListener() { //dont click more than once
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 new ForgottenPassword().setVisible(true);
-                new SignIn().setVisible(false);
+                //new SignIn().setVisible();
             }
         });
     }//GEN-LAST:event_forgottenpasbtnActionPerformed

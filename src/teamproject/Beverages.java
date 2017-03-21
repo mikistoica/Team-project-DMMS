@@ -135,8 +135,13 @@ public class Beverages extends javax.swing.JFrame {
         yourcartbtn.setForeground(new java.awt.Color(0, 51, 0));
         yourcartbtn.setText("Your cart");
         yourcartbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 0)));
+        yourcartbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourcartbtnActionPerformed(evt);
+            }
+        });
 
-        bvgpanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Beverages", 0, 0, new java.awt.Font("AR JULIAN", 0, 18), new java.awt.Color(0, 51, 0))); // NOI18N
+        bvgpanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Beverages", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("AR JULIAN", 0, 18), new java.awt.Color(0, 51, 0))); // NOI18N
         bvgpanel.setOpaque(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Beet-Juice.jpg"))); // NOI18N
@@ -610,15 +615,15 @@ public class Beverages extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(fruitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(vegbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(yourcartbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hmepgebtn)
+                        .addComponent(yourcartbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hmepgebtn)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -677,6 +682,17 @@ public class Beverages extends javax.swing.JFrame {
     private void addbeetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbeetActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addbeetActionPerformed
+
+    private void yourcartbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourcartbtnActionPerformed
+        // TODO add your handling code here:
+        yourcartbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new ShoppingCart().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_yourcartbtnActionPerformed
 
     /**
      * @param args the command line arguments
