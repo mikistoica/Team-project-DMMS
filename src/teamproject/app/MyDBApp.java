@@ -5,8 +5,7 @@
  */
 package teamproject.app;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 
 /**
  *
@@ -14,15 +13,22 @@ import java.sql.DriverManager;
  */
 public class MyDBApp {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        Connection conn = DriverManager.getConnection(
+                "jdbc:ucanaccess://C:\\Users\\deric\\Desktop\\DatabaseforProject.accdb");
+        Statement s = conn.createStatement();
+        ResultSet rs = s.executeQuery(
+                "SELECT Customer_Fname + ' ' + Customer_Lname + ' ' + Username + ' ' + Email FROM Customer");
+        while (rs.next()) {
+            System.out.println(rs.getString(1));
+}
     }
     
     public Connection dbConnection;
     public void makeDbConnection() {
         try {
-            /*String user = "saxon";
-            String password = "password";*/
-            //String url = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=DatabaseforProject.mdb";
+            
+            String url = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=DatabaseforProject.mdb";
             dbConnection = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\21258784\\Desktop\\DatabaseforProject.accdb");
         } catch (Exception ex) {
             ex.printStackTrace();
