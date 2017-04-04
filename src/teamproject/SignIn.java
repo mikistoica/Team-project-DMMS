@@ -8,10 +8,7 @@ package teamproject;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,6 +28,7 @@ public class SignIn extends javax.swing.JFrame {
         initComponents();
         this.getContentPane().setBackground(Color.orange);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,21 +43,21 @@ public class SignIn extends javax.swing.JFrame {
         siusername = new javax.swing.JLabel();
         txtsiusername = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        txtsipassword = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         loginbtn = new javax.swing.JButton();
-        txtemail = new javax.swing.JTextField();
-        txtsurname = new javax.swing.JTextField();
-        txtcausername = new javax.swing.JTextField();
-        txtphone = new javax.swing.JTextField();
-        txtcapassword = new javax.swing.JPasswordField();
+        email = new javax.swing.JTextField();
+        surname = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
+        phone = new javax.swing.JTextField();
         forgottenpasbtn = new javax.swing.JButton();
         signinbtn = new javax.swing.JButton();
-        txtadd = new javax.swing.JTextField();
+        address = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         hmepgebtn = new javax.swing.JButton();
-        txtconfirmpassword1 = new javax.swing.JPasswordField();
-        txtfirstname1 = new javax.swing.JTextField();
+        firstname = new javax.swing.JTextField();
+        pw1 = new javax.swing.JTextField();
+        pw = new javax.swing.JTextField();
+        txtsipassword = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -81,8 +79,6 @@ public class SignIn extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 51, 0));
         jLabel1.setText("Password: ");
 
-        txtsipassword.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 51, 0));
         jLabel3.setText("Create an account");
@@ -97,15 +93,13 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
 
-        txtemail.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        email.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        txtsurname.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Surname", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        surname.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Surname", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        txtcausername.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Create a username", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        username.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Create a username", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        txtphone.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phone number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
-
-        txtcapassword.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Create a password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        phone.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phone number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
         forgottenpasbtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         forgottenpasbtn.setForeground(new java.awt.Color(0, 51, 0));
@@ -127,8 +121,8 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
 
-        txtadd.setForeground(new java.awt.Color(0, 51, 0));
-        txtadd.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Address", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        address.setForeground(new java.awt.Color(0, 51, 0));
+        address.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Address", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 51, 0));
@@ -142,9 +136,9 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
 
-        txtconfirmpassword1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Confirm password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        firstname.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Firstname", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        txtfirstname1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Firstname", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        txtsipassword.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,8 +151,8 @@ public class SignIn extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtsipassword, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(55, 55, 55)
+                                .addComponent(txtsipassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(siusername)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -179,20 +173,22 @@ public class SignIn extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtcapassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                                .addComponent(txtcausername, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(txtadd, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtfirstname1, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
+                            .addComponent(firstname, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                                    .addComponent(pw, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                                    .addComponent(address))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtsurname, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                            .addComponent(txtphone)
-                            .addComponent(txtconfirmpassword1)
-                            .addComponent(txtemail))))
+                            .addComponent(surname, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                            .addComponent(phone)
+                            .addComponent(email)
+                            .addComponent(pw1))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -211,7 +207,7 @@ public class SignIn extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtsipassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
+                .addGap(7, 7, 7)
                 .addComponent(forgottenpasbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,20 +217,20 @@ public class SignIn extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtsurname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtfirstname1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtcausername)
-                    .addComponent(txtphone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(surname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(firstname))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtcapassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtconfirmpassword1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pw1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pw, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtadd, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(signinbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -248,82 +244,68 @@ public class SignIn extends javax.swing.JFrame {
 
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
         // TODO add your handling code here:
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\21281758\\Desktop\\DatabaseforProject.accdb"); 
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT Username + Password FROM Customer WHERE Username = '"+username+"' and Password = '"+pw+"'");
+            
+           if(rs.next()){
+               JOptionPane.showMessageDialog(null, "Welcome " + rs.getString("Username"));
+               HomePage mn = new HomePage();
+               mn.setVisible(true);
+           }else{
+               JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
+           }
+            rs.close();
+            conn.close();
+        }catch(Exception e){
+           System.out.print(e.toString());
+        }
+//        if(username.getText().equals(txtsiusername.getText()) && pw.getText().equals(txtsipassword.getText())) {
+//            loginbtn.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                dispose();
+//                new AccountPage().setVisible(true);
+//            }
+//        });
+//        }
     }//GEN-LAST:event_loginbtnActionPerformed
 
     private void signinbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signinbtnActionPerformed
         // TODO add your handling code here:
-        try {
-            
-            Connection conn = DriverManager.getConnection(
-                "jdbc:ucanaccess://C:\\Users\\deric\\Desktop\\DatabaseforProject.accdb");
-        Statement s = conn.createStatement();
-            int a = s.executeUpdate("insert into Customer (Customer_Fname, Customer_Lname, Username, Phone, Password, Address, Email) values (?, ?, ?, ?, ?, ?, ?)");
-            
-//            String fname, lname, username, password, address;
-//            int phone = 0;
-//            int id = 0;
-//            
-//            fname = txtfirstname.getText();
-//            lname = txtsurname.getText();
-//            username = txtcausername.getText();
-//            password = txtcapassword.getText();
-//            address = txtadd.getText();
-            //phone = Integer.parseInt(txtphone.getText());
-            
-            if(a==1)
-            {
-                JOptionPane.showMessageDialog(null, "WELCOME! \n Your details have been saved!"
-                        + " \n \n You can now log into your account using your username and password!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Registration failed!");
-            }
-            
-            String sql = "insert into Customer (Customer_Fname, Customer_Lname, Username, Phone, Password, Address, Email) values (?, ?, ?, ?, ?, ?, ?)";
-            String firstname, surname, username, address, email;
-            int phone = 0;
-            
-            
-            
-            firstname = txtemail.getText();
-            surname = txtsurname.getText();
-            username = txtcausername.getText();
-            char[] password = txtcapassword.getPassword();
-            address = txtadd.getText();
-            email = txtemail.getText();
-            
-            
-            try {
-                phone = Integer.parseInt(txtphone.getText());
-            } catch (Exception e) {
-                txtphone.setText("Enter a number please");
-                txtemail.setText("Enter firstname please");
-                txtsurname.setText("Enter surname please");
-                txtcausername.setText("Enter username please");
-            }
-            
-            if(phone!=0) {
-                MyDBApp con = new MyDBApp();
-                con.makeDbConnection();
-                Statement statement = con.dbConnection.createStatement();
-                
-                //Generate a random id for each customer
-                //The customer does not have access to the id, it s just for administration purposes
-                Random rand = new Random();
-                int ranID = rand.nextInt(50) + 1;
-                statement.executeUpdate("INSERT INTO Customer VALUES (" + firstname + " ',' " + surname
-                        + " ',' " + address + " ',' " +username+ " ',' " +phone+ " ',' " + password + " ',' " + email);
-                
-                
-                JOptionPane.showMessageDialog(null, "WELCOME! \n Your details have been saved!"
-                        + " \n \n You can now log into your account using your username and password!");
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(SignIn.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        String s1, s2, s3, s4, s5, s6, s7, s8;
         
+        s1 = firstname.getText();
+        s2 = surname.getText();
+        s3 = address.getText();
+        s4 = username.getText();
+        s5 = pw.getText();
+        s6 = email.getText();
+        s7 = phone.getText();
+        s8 = pw1.getText();
+        
+        
+        
+        try{
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\21281758\\Desktop\\DatabaseforProject.accdb");
+            Statement st = con.createStatement();
+            int a = st.executeUpdate("insert into Customer values ('"+s1+"','"+s2+"','"+s3+"','"+s4+"','"+s5+"','"+s6+"','"+s7+"','"+s8+"')");
+            
+            if (a==1){
+                JOptionPane.showMessageDialog(null, "RECORD INSERTED");
+            }
+            else{
+                System.out.println("Failed.");
+            }
+        }
+        catch(Exception e){
+            System.out.println("Error");
+        }
+ 
     }//GEN-LAST:event_signinbtnActionPerformed
 
-    public Connection dbConnection;
+    
     
     private void forgottenpasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgottenpasbtnActionPerformed
         // TODO add your handling code here:
@@ -388,6 +370,9 @@ public class SignIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField address;
+    private javax.swing.JTextField email;
+    private javax.swing.JTextField firstname;
     private javax.swing.JButton forgottenpasbtn;
     private javax.swing.JButton hmepgebtn;
     private javax.swing.JButton jButton1;
@@ -395,17 +380,14 @@ public class SignIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblsignin;
     private javax.swing.JButton loginbtn;
+    private javax.swing.JTextField phone;
+    private javax.swing.JTextField pw;
+    private javax.swing.JTextField pw1;
     private javax.swing.JButton signinbtn;
     private javax.swing.JLabel siusername;
-    private javax.swing.JTextField txtadd;
-    private javax.swing.JPasswordField txtcapassword;
-    private javax.swing.JTextField txtcausername;
-    private javax.swing.JPasswordField txtconfirmpassword1;
-    private javax.swing.JTextField txtemail;
-    private javax.swing.JTextField txtfirstname1;
-    private javax.swing.JTextField txtphone;
-    private javax.swing.JPasswordField txtsipassword;
+    private javax.swing.JTextField surname;
+    private javax.swing.JTextField txtsipassword;
     private javax.swing.JTextField txtsiusername;
-    private javax.swing.JTextField txtsurname;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
