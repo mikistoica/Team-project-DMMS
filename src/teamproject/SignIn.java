@@ -138,21 +138,35 @@ public class SignIn extends javax.swing.JFrame {
 
         firstname.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Firstname", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        txtsipassword.setText("jTextField1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(firstname, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                                    .addComponent(pw, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                                    .addComponent(address))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(surname, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                            .addComponent(phone)
+                            .addComponent(email)
+                            .addComponent(pw1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(84, 84, 84)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addGap(55, 55, 55)
-                                .addComponent(txtsipassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtsipassword))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(siusername)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -172,23 +186,7 @@ public class SignIn extends javax.swing.JFrame {
                         .addGap(127, 127, 127)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstname, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                                    .addComponent(pw, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                                    .addComponent(address))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(surname, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                            .addComponent(phone)
-                            .addComponent(email)
-                            .addComponent(pw1))))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -244,22 +242,28 @@ public class SignIn extends javax.swing.JFrame {
 
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
         // TODO add your handling code here:
-        try{
-            Connection conn = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\21281758\\Desktop\\DatabaseforProject.accdb"); 
+        String t1, t2;
+        
+        try {
+            t1 = txtsiusername.getText();
+            t2 = txtsipassword.getText();
+//            username = txtsiusername.getText();
+//            pw = txtsipassword.getText();
+            Connection conn = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\Mihaela\\Documents\\DatabaseforProject.accdb");
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT Username + Password FROM Customer WHERE Username = '"+username+"' and Password = '"+pw+"'");
-            
-           if(rs.next()){
-               JOptionPane.showMessageDialog(null, "Welcome " + rs.getString("Username"));
-               HomePage mn = new HomePage();
-               mn.setVisible(true);
-           }else{
-               JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
-           }
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Customer WHERE Username = '" + t1 + "' and Password = '" + t2 + "'");
+                
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Welcome " + rs.getString("firstname"));                
+                //new AccountPage().setVisible(true);
+                              
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
+            }
             rs.close();
             conn.close();
-        }catch(Exception e){
-           System.out.print(e.toString());
+        } catch (Exception e) {
+            System.out.print(e.toString());
         }
 //        if(username.getText().equals(txtsiusername.getText()) && pw.getText().equals(txtsipassword.getText())) {
 //            loginbtn.addActionListener(new ActionListener() {
@@ -284,11 +288,9 @@ public class SignIn extends javax.swing.JFrame {
         s6 = email.getText();
         s7 = phone.getText();
         s8 = pw1.getText();
-        
-        
-        
+                       
         try{
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\21281758\\Desktop\\DatabaseforProject.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\Mihaela\\Documents\\DatabaseforProject.accdb");
             Statement st = con.createStatement();
             int a = st.executeUpdate("insert into Customer values ('"+s1+"','"+s2+"','"+s3+"','"+s4+"','"+s5+"','"+s6+"','"+s7+"','"+s8+"')");
             

@@ -17,21 +17,21 @@ public class MyDBApp {
     
     public static void main(String[] args) throws SQLException {
         Connection conn = DriverManager.getConnection(
-                "jdbc:ucanaccess://C:\\Users\\21281758\\Desktop\\DatabaseforProject.accdb");
+                "jdbc:ucanaccess://C:\\Users\\Mihaela\\Documents\\DatabaseforProject.accdb");
         Statement s = conn.createStatement();
         ResultSet rs = s.executeQuery(
-                "SELECT Customer_Fname + ' ' + Customer_Lname + ' ' + Username + ' ' + Email FROM Customer");
+                "SELECT Firstname + ' ' + surname + ' ' + Username + ' ' + Email FROM Customer");
         while (rs.next()) {
             System.out.println(rs.getString(1));
 }
+        
     }
     
     public Connection dbConnection;
     public void makeDbConnection() {
-        try {
-            
+        try {            
             String url = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=DatabaseforProject.mdb";
-            dbConnection = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\21281758\\Desktop\\DatabaseforProject.accdb");
+            dbConnection = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\Mihaela\\Documents\\DatabaseforProject.accdb");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

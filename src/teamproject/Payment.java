@@ -126,10 +126,10 @@ public class Payment extends javax.swing.JFrame {
 
     private void paybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paybtnActionPerformed
         // TODO add your handling code here:
-        String cardnum, cardname, exdate, cvv;
-        
-        cardnum = cardnum.getText();
-        JOptionPane.showMessageDialog(null, "Your products: " );
+//        String cardnum, cardname, exdate, cvv;
+//        
+//        cardnum = cardnum.getText();
+//        JOptionPane.showMessageDialog(null, "Your products: " );
     }//GEN-LAST:event_paybtnActionPerformed
 
     /**
