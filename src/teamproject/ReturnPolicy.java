@@ -48,13 +48,13 @@ public class ReturnPolicy extends javax.swing.JFrame {
         jLabel1.setText("Refunds and returns policy: FAQs");
 
         jTextPane1.setEditable(false);
-        jTextPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "How do I make a complaint?", 0, 0, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(0, 51, 0))); // NOI18N
+        jTextPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "How do I make a complaint?", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(0, 51, 0))); // NOI18N
         jTextPane1.setForeground(new java.awt.Color(0, 51, 0));
         jTextPane1.setText("If you have any complaints, please contact us by phone or email. We are happy to help you and resolve your complaint professionally and courteously!");
         jScrollPane1.setViewportView(jTextPane1);
 
         jTextPane3.setEditable(false);
-        jTextPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Can I return an item I've bought on a sale?", 0, 0, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(0, 51, 0))); // NOI18N
+        jTextPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Can I return an item I've bought on a sale?", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(0, 51, 0))); // NOI18N
         jTextPane3.setForeground(new java.awt.Color(0, 51, 0));
         jTextPane3.setText("Yes, it makes no difference. As long as you are not happy with your item, we are happy to refund it.");
         jScrollPane3.setViewportView(jTextPane3);
@@ -78,14 +78,12 @@ public class ReturnPolicy extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addContainerGap())
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(closebtn)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,7 +96,7 @@ public class ReturnPolicy extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(closebtn)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

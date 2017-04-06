@@ -6,6 +6,13 @@
 package teamproject;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,105 +37,153 @@ public class Marketing extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        loyaltytxt = new javax.swing.JTextField();
         emailtxt = new javax.swing.JTextField();
-        usernametxt = new javax.swing.JTextField();
+        pointstxt = new javax.swing.JTextField();
         sendemail = new javax.swing.JLabel();
-        firstnametxt = new javax.swing.JTextField();
-        surnametxt = new javax.swing.JTextField();
-        idtxt = new javax.swing.JTextField();
         Sendbut = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        usernametxt1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        loyaltytxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Loyalty Points", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
-        loyaltytxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loyaltytxtActionPerformed(evt);
-            }
-        });
+        emailtxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Email", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
-        emailtxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Email", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
-
-        usernametxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Username", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
+        pointstxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Loyalty Points", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
         sendemail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         sendemail.setForeground(new java.awt.Color(0, 51, 0));
         sendemail.setText("Send email");
 
-        firstnametxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Firstname", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
-
-        surnametxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Surname", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
-
-        idtxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID", 0, 0, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
-
         Sendbut.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Sendbut.setText("Send");
         Sendbut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 0)));
+        Sendbut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SendbutActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Sending the email:");
+
+        jButton1.setText("Show ponts");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        usernametxt1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Username", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 0))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(idtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sendemail))
-                .addContainerGap(152, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(78, 78, 78)
                         .addComponent(Sendbut, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(emailtxt)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(usernametxt, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                                    .addComponent(firstnametxt))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(surnametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(loyaltytxt, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(pointstxt, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(24, 24, 24))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(146, 146, 146)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(sendemail))
+                .addContainerGap(166, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(37, 37, 37)
+                    .addComponent(usernametxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(238, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(sendemail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(idtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(surnametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(firstnametxt))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usernametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loyaltytxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                .addGap(36, 36, 36)
+                .addComponent(pointstxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Sendbut, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Sendbut, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(66, 66, 66)
+                    .addComponent(usernametxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(157, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loyaltytxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loyaltytxtActionPerformed
+    private void SendbutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendbutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_loyaltytxtActionPerformed
+        
+        
+              String t1, t2;
+        
+        try {
+            t1 = usernametxt1.getText();
+            t2 = emailtxt.getText();
+//            username = txtsiusername.getText();
+//            pw = txtsipassword.getText();
+            Connection conn = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\Mihaela\\Documents\\DatabaseforProject.accdb");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Customer WHERE Username = '" + t1 + "' and Email = '" + t2 + "'");
+                
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Send to " + rs.getString("Email"));                
+                //new AccountPage().setVisible(true);
+                              
+            } else {
+                JOptionPane.showMessageDialog(null, "The email did not send");
+            }
+            rs.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.print(e.toString());
+        }
+    }//GEN-LAST:event_SendbutActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+               String gg = usernametxt1.getText();
+  
+        try {
+            // TODO add your handling code here:
+            Connection conn = DriverManager.getConnection(
+                    "jdbc:ucanaccess://C:\\Users\\Mihaela\\Documents\\DatabaseforProject.accdb");
+            PreparedStatement ps = conn.prepareStatement("SELECT Points FROM Points WHERE username = '"+gg+"'");
+             PreparedStatement ps1 = conn.prepareStatement("SELECT Email FROM Customer WHERE Username = '"+gg+"'");
+            ResultSet rs = ps.executeQuery();
+            ResultSet rs1 = ps1.executeQuery();
+            if (rs.next()) {
+                pointstxt.setText(rs.getString(1));
+            }
+            if (rs1.next()) {
+                emailtxt.setText(rs1.getString(1));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,12 +223,10 @@ public class Marketing extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Sendbut;
     private javax.swing.JTextField emailtxt;
-    private javax.swing.JTextField firstnametxt;
-    private javax.swing.JTextField idtxt;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField loyaltytxt;
+    private javax.swing.JTextField pointstxt;
     private javax.swing.JLabel sendemail;
-    private javax.swing.JTextField surnametxt;
-    private javax.swing.JTextField usernametxt;
+    private javax.swing.JTextField usernametxt1;
     // End of variables declaration//GEN-END:variables
 }
